@@ -1,6 +1,6 @@
 file_format: "1"
-id: corne
-name: Corne
+id: dks
+name: dks
 type: shield
 url: https://github.com/foostan/crkbd/
 requires: [pro_micro]
@@ -10,5 +10,5 @@ features:
   - display
   - underglow
 siblings:
-  - corne_left
-  - corne_right
+  - dks_left
+  - dks_right
