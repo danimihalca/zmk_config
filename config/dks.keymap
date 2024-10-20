@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define COMBO(K0, K1, OUTPUT) \
+    combo_##K0_##K1 { \
+        timeout-ms = <40>; \
+        key-positions = <KEYPOS>; \
+        layers = <0>; \
+        bindings = <OUTPUT>; \
+    };
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -29,6 +38,107 @@
             key-positions = <25 26>;
             bindings = <&kp GRAVE>;
         };
+
+        //// Keys layout
+        // XX  1  2  3  4  5 |  6  7  8  9 10 XX
+        // XX 13 14 15 16 17 | 18 19 20 21 22 XX
+        // XX 25 26 27 28 29 | 30 31 32 33 34 XX
+
+        ////// Same side combos
+
+        //// LH
+
+/*
+        // row 0
+        COMBO(1, 2, &none)
+        COMBO(2, 3, &none)
+        COMBO(3, 4, &none)
+        COMBO(4, 5, &none)
+
+        // row 0+1
+        COMBO(1, 13, &none)
+        COMBO(2, 14, &none)
+        COMBO(3, 15, &none)
+        COMBO(4, 16, &none)
+        COMBO(5, 17, &none)
+
+        // row 1
+        COMBO(13, 14, &none)
+        COMBO(14, 15, &none)
+        COMBO(15, 16, &none)
+        COMBO(16, 17, &none)
+
+        // row 1+2
+        COMBO(13, 25, &none)
+        COMBO(14, 26, &none)
+        COMBO(15, 27, &none)
+        COMBO(16, 28, &none)
+        COMBO(17, 29, &none)
+
+        // row 2
+        COMBO(25, 26, &none)
+        COMBO(26, 27, &none)
+        COMBO(27, 28, &none)
+        COMBO(28, 29, &none)
+
+
+        //// RH
+
+        // row 0
+        COMBO(6, 7, &none)
+        COMBO(7, 8, &none)
+        COMBO(8, 9, &none)
+        COMBO(9, 10, &none)
+
+        // row 0+1
+        COMBO(6, 18, &none)
+        COMBO(7, 19, &none)
+        COMBO(8, 20, &none)
+        COMBO(9, 21, &none)
+        COMBO(10, 22, &none)
+
+        // row 1
+        COMBO(18, 19, &none)
+        COMBO(19, 20, &none)
+        COMBO(20, 21, &none)
+        COMBO(21, 22, &none)
+
+        // row 1+2
+        COMBO(18, 30, &none)
+        COMBO(19, 31, &none)
+        COMBO(20, 32, &none)
+        COMBO(21, 33, &none)
+        COMBO(22, 34, &none)
+
+        // row 2
+        COMBO(30, 31, &none)
+        COMBO(31, 32, &none)
+        COMBO(32, 33, &none)
+        COMBO(33, 34, &none)
+
+        ////// Symmetric combos
+
+        // row 0
+        COMBO(1, 10, &none)
+        COMBO(2, 9, &none)
+        COMBO(3, 8, &none)
+        COMBO(4, 7, &none)
+        COMBO(5, 6, &none)
+
+        // row 1
+        COMBO(13, 22, &none)
+        COMBO(14, 21, &none)
+        COMBO(15, 20, &none)
+        COMBO(16, 19, &none)
+        COMBO(17, 18, &none)
+
+        // row 2
+        COMBO(25, 34, &none)
+        COMBO(26, 33, &none)
+        COMBO(27, 32, &none)
+        COMBO(28, 31, &none)
+        COMBO(29, 30, &none)
+*/
     };
 };
 
