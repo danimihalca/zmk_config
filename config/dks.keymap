@@ -10,10 +10,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define COMBO(K0, K1, OUTPUT) \
-    combo_##K0_##K1 { \
+    combo_##K0##_##K1 { \
         timeout-ms = <40>; \
-        key-positions = <KEYPOS>; \
-        layers = <0>; \
+        key-positions = <K0 K1>; \
         bindings = <OUTPUT>; \
     };
 
@@ -21,23 +20,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_nav_layer_lock {
-            timeout-ms = <50>;
-            key-positions = <25 34>;
-            bindings = <&tog 3>;
-        };
-
-        combo_num_layer_lock {
-            timeout-ms = <50>;
-            key-positions = <37 40>;
-            bindings = <&tog 1>;
-        };
-
-        combo_nav_lock {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            bindings = <&kp GRAVE>;
-        };
 
         //// Keys layout
         // XX  1  2  3  4  5 |  6  7  8  9 10 XX
@@ -49,93 +31,92 @@
         ////// Same side combos
 
         //// LH
-
-/*
+        
         // row 0
-        COMBO(1, 2, &none)
-        COMBO(2, 3, &none)
-        COMBO(3, 4, &none)
-        COMBO(4, 5, &none)
+        // COMBO(1, 2, &none)
+        COMBO(2, 3, &kp LEFT_PARENTHESIS)
+        COMBO(3, 4, &kp RIGHT_PARENTHESIS)
+        // COMBO(4, 5, &none)
 
         // row 0+1
-        COMBO(1, 13, &none)
-        COMBO(2, 14, &none)
-        COMBO(3, 15, &none)
-        COMBO(4, 16, &none)
-        COMBO(5, 17, &none)
+        // COMBO(1, 13, &none)
+        COMBO(2, 14, &kp AT_SIGN)
+        COMBO(3, 15, &kp PERIOD)
+        COMBO(4, 16, &kp COLON)
+        COMBO(5, 17, &kp AMPERSAND)
 
         // row 1
-        COMBO(13, 14, &none)
-        COMBO(14, 15, &none)
-        COMBO(15, 16, &none)
-        COMBO(16, 17, &none)
+        // COMBO(13, 14, &none)
+        COMBO(14, 15, &kp LEFT_BRACKET)
+        COMBO(15, 16, &kp RIGHT_BRACKET)
+        // COMBO(16, 17, &none)
 
         // row 1+2
-        COMBO(13, 25, &none)
-        COMBO(14, 26, &none)
-        COMBO(15, 27, &none)
-        COMBO(16, 28, &none)
-        COMBO(17, 29, &none)
+        // COMBO(13, 25, &none)
+        COMBO(14, 26, &kp PERCENT)
+        COMBO(15, 27, &kp COMMA)
+        COMBO(16, 28, &kp SEMICOLON)
+        COMBO(17, 29, &kp PIPE)
 
         // row 2
-        COMBO(25, 26, &none)
-        COMBO(26, 27, &none)
-        COMBO(27, 28, &none)
-        COMBO(28, 29, &none)
+        COMBO(25, 26, &kp GRAVE)
+        COMBO(26, 27, &kp LEFT_BRACE)
+        COMBO(27, 28, &kp RIGHT_BRACE)
+        // COMBO(28, 29, &none)
 
 
         //// RH
 
         // row 0
-        COMBO(6, 7, &none)
-        COMBO(7, 8, &none)
-        COMBO(8, 9, &none)
-        COMBO(9, 10, &none)
+        // COMBO(6, 7, &none)
+        COMBO(7, 8, &kp QUESTION)
+        COMBO(8, 9, &kp EXCLAMATION)
+        // COMBO(9, 10, &none)
 
         // row 0+1
-        COMBO(6, 18, &none)
-        COMBO(7, 19, &none)
-        COMBO(8, 20, &none)
-        COMBO(9, 21, &none)
-        COMBO(10, 22, &none)
+        COMBO(6, 18, &kp CARET)
+        COMBO(7, 19, &kp PLUS)
+        COMBO(8, 20, &kp MINUS)
+        COMBO(9, 21, &kp HASH)
+        // COMBO(10, 22, &none)
 
         // row 1
-        COMBO(18, 19, &none)
-        COMBO(19, 20, &none)
-        COMBO(20, 21, &none)
-        COMBO(21, 22, &none)
+        // COMBO(18, 19, &none)
+        COMBO(19, 20, &kp BACKSLASH)
+        COMBO(20, 21, &kp SLASH)
+        // COMBO(21, 22, &none)
 
         // row 1+2
-        COMBO(18, 30, &none)
-        COMBO(19, 31, &none)
-        COMBO(20, 32, &none)
-        COMBO(21, 33, &none)
+        COMBO(18, 30, &kp DOLLAR)
+        COMBO(19, 31, &kp EQUAL)
+        COMBO(20, 32, &kp UNDERSCORE)
+        COMBO(21, 33, &kp ASTERISK)
         COMBO(22, 34, &none)
 
         // row 2
-        COMBO(30, 31, &none)
-        COMBO(31, 32, &none)
-        COMBO(32, 33, &none)
-        COMBO(33, 34, &none)
+        // COMBO(30, 31, &none)
+        COMBO(31, 32, &kp LESS_THAN)
+        COMBO(32, 33, &kp GREATER_THAN)
+        // COMBO(33, 34, &none)
 
         ////// Symmetric combos
 
         // row 0
-        COMBO(1, 10, &none)
-        COMBO(2, 9, &none)
-        COMBO(3, 8, &none)
-        COMBO(4, 7, &none)
-        COMBO(5, 6, &none)
+        // COMBO(1, 10, &none)
+        // COMBO(2, 9, &none)
+        // COMBO(3, 8, &none)
+        // COMBO(4, 7, &none)
+        // COMBO(5, 6, &none)
 
         // row 1
-        COMBO(13, 22, &none)
-        COMBO(14, 21, &none)
-        COMBO(15, 20, &none)
-        COMBO(16, 19, &none)
-        COMBO(17, 18, &none)
+        // COMBO(13, 22, &none)
+        // COMBO(14, 21, &none)
+        // COMBO(15, 20, &none)
+        // COMBO(16, 19, &none)
+        // COMBO(17, 18, &none)
 
         // row 2
-        COMBO(25, 34, &none)
+        COMBO(25, 34, &tog 3) // combo_nav_layer_lock
         COMBO(26, 33, &none)
         COMBO(27, 32, &none)
         COMBO(28, 31, &none)
@@ -143,9 +124,8 @@
 
         // thumbcluster
         COMBO(36, 41, &none)
-        COMBO(37, 40, &none)
+        COMBO(37, 40, &tog 1) // combo_num_layer_lock
         COMBO(38, 39, &none)
-*/
     };
 };
 
