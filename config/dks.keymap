@@ -150,9 +150,6 @@
 &none  &lt 3 Z         &kp X           &kp C               &kp V             &kp B        &kp N        &kp M             &kp COMMA           &kp DOT         &lt 4 GRAVE                &none
                                        &lt 5 ESCAPE        &lt 1 SPACE       &lt 2 TAB    &lt 2 ENTER  &lt 1 BACKSPACE   &lt 5 DELETE
             >;
-
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
-
         };
 
         number {
@@ -180,8 +177,6 @@
 &none  &none  &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME   &kp END              &none   &none      &none      &none     &none     &none
                            &trans         &trans     &tog 3               &tog 3  &trans     &trans
             >;
-            
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN &inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
         };
 
         mouse_navigation {
