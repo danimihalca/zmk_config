@@ -16,6 +16,17 @@
         bindings = <OUTPUT>; \
     };
 
+&lt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;// tap tap hold will fire the tapping key continuosly 
+    flavor = "tap-preferred";
+};
+
+&mt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;// tap tap hold will fire the tapping key continuosly 
+    flavor = "tap-preferred";
+};
 
 / {
     combos {
